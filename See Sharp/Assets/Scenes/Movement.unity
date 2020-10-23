@@ -384,7 +384,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667242329}
-  m_LocalRotation: {x: 0.15414323, y: 0.27498606, z: -0.044714276, w: 0.9479574}
+  m_LocalRotation: {x: 0.15414323, y: 0.2749861, z: -0.044714287, w: 0.9479574}
   m_LocalPosition: {x: 0.85646033, y: 1.9989407, z: 2.7931275}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -533,6 +533,21 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.030416574
       objectReference: {fileID: 0}
+    - target: {fileID: 2112103952956565453, guid: 6c27815f092764b8789016b09118dd42,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.27498606
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112103952956565453, guid: 6c27815f092764b8789016b09118dd42,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.044714287
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112103952956565453, guid: 6c27815f092764b8789016b09118dd42,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.15414321
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c27815f092764b8789016b09118dd42, type: 3}
 --- !u!1001 &2305534199132166605
@@ -601,6 +616,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Alex
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305534199152938809, guid: 7eac6e0caa84742168f2964371caaff0,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305534199152938809, guid: 7eac6e0caa84742168f2964371caaff0,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eac6e0caa84742168f2964371caaff0, type: 3}
