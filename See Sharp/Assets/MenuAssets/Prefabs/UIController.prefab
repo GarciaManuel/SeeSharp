@@ -159,7 +159,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Back
+  m_Text: 'Atras
 
 '
 --- !u!114 &114307521768639578
@@ -400,7 +400,6 @@ RectTransform:
   - {fileID: 224022279099792788}
   - {fileID: 224456999060022780}
   - {fileID: 224190351643383294}
-  - {fileID: 224199329495961350}
   m_Father: {fileID: 224835608012764384}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -776,7 +775,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Brightness
+  m_Text: Brillo
 --- !u!1 &1095419127437090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,7 +1582,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Yes
+  m_Text: Si
 --- !u!114 &114631456466944034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1754,7 +1753,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Do you want to start a new game?
+  m_Text: Deseas iniciar un nuevo juego?
 --- !u!1 &1174445659643848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2387,7 +2386,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Reset to default
+  m_Text: Regresar a default
 --- !u!114 &114463775431132340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2558,9 +2557,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'No Save File Found
-
-'
+  m_Text: Archivo no encontrado
 --- !u!1 &1294962798769576
 GameObject:
   m_ObjectHideFlags: 0
@@ -3541,7 +3538,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Apply
+  m_Text: Aplicar
 --- !u!114 &114242344326379520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4357,7 +4354,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Yes
+  m_Text: Si
 --- !u!114 &114425169954994756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4682,7 +4679,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Reset to default
+  m_Text: Regresar defecto
 --- !u!114 &114285005715370132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5166,7 +5163,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Apply
+  m_Text: Aplicar
 --- !u!114 &114829579203401376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5775,7 +5772,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Controls >>
+  m_Text: 'Controles >>
 
 '
 --- !u!114 &114190828022327494
@@ -5983,9 +5980,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Back
-
-'
+  m_Text: Atras
 --- !u!114 &114000792297464864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6158,7 +6153,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Graphics
+  m_Text: Graficos
 --- !u!114 &114205594375595020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6900,7 +6895,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Invert Y
+  m_Text: Invertir Y
 --- !u!1 &1768514135882080
 GameObject:
   m_ObjectHideFlags: 0
@@ -7290,7 +7285,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Graphics
+  m_Text: 'Graficos
 
 '
 --- !u!1 &1789519454795796
@@ -7370,7 +7365,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Controller \nSensitivity"
+  m_Text: 'Controlar
+
+    sensibilidad'
 --- !u!1 &1790189160827808
 GameObject:
   m_ObjectHideFlags: 0
@@ -7488,7 +7485,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Reset to default
+  m_Text: Regresar a default
 --- !u!114 &114836900062907644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7661,7 +7658,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Back
+  m_Text: 'Atras
 
 '
 --- !u!114 &114086273960398430
@@ -7905,80 +7902,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &1853083955987086
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 224199329495961350}
-  - component: {fileID: 222927083907960966}
-  - component: {fileID: 114718852103185918}
-  m_Layer: 5
-  m_Name: Game_Logo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &224199329495961350
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853083955987086}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 224234810426151292}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 285.90002, y: -190.04999}
-  m_SizeDelta: {x: 250, y: 250}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &222927083907960966
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853083955987086}
-  m_CullTransparentMesh: 0
---- !u!114 &114718852103185918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853083955987086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cf0c440ce5cd1de41bf566ca19621289, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1857261014176652
 GameObject:
   m_ObjectHideFlags: 0
@@ -8088,7 +8011,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Are you sure you want to load?
+  m_Text: Deseas cargar un juego?
 --- !u!1 &1889607586039040
 GameObject:
   m_ObjectHideFlags: 0
@@ -8323,7 +8246,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Apply
+  m_Text: Aplicar
 --- !u!114 &114643387716397510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8496,7 +8419,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sound
+  m_Text: Sonido
 --- !u!114 &114781094372214286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8748,7 +8671,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Back
+  m_Text: 'Atras
 
 '
 --- !u!114 &114119319443364386
