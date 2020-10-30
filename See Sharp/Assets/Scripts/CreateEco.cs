@@ -7,6 +7,7 @@ public class CreateEco : MonoBehaviour
     // Start is called before the first frame update
     private Vector3 scaled;
 
+    public float maxRadius;
     private SphereCollider myCollider;
     void Start()
     {
@@ -25,8 +26,8 @@ public class CreateEco : MonoBehaviour
     }
 
     IEnumerator CreatingEco(){
-        myCollider.radius += 7f;
+        myCollider.radius += maxRadius;
         yield return new WaitForSeconds(1);
-        myCollider.radius -= 7f;
+        myCollider.radius -= maxRadius;
     }
 }
