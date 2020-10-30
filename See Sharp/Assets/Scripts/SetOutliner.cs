@@ -8,33 +8,74 @@ public class SetOutliner : MonoBehaviour
 
     private float thick;
     private bool increase;
+
+    private Material[] mats;
     // Update is called once per frame
-    void Update()
-    {
-        Debug.Log('1');
-        Debug.Log("Pressed");
-        if(thick > 3){
-            thick = 3f;
+    
+        private void OnTriggerEnter(Collider other) {
+            StartCoroutine(ChangeOutline());
         }
-        render.material.SetFloat("_Thickness", thick);
-        render.material.SetColor("_Color",new Color(1f,1f,1f,1f));
-        // gameObject.GetComponent<Renderer>().material = secondMaterial;
-        thick+=0.2f;
-     
-     if(Input.GetKey(KeyCode.S)){
-            render.material.SetFloat("_Thickness", 0.01f);
-     }
-    }
+       
+            
+    
     private void Start() {
         render = gameObject.GetComponent<Renderer>();
-        thick = 0.05f;
+        mats = render.materials;
+        thick = 0.02f;
+        render.material.SetFloat("_Thickness", thick);
     }
 
-    private void setOutline (string color, int mode, bool precomputed, float width){
-        var outline = gameObject.AddComponent<Outline>();
-        // outline.PrecomputeOutline = true;
-        outline.OutlineMode = Outline.Mode.OutlineAll;
-        outline.OutlineColor = Color.yellow;
-        outline.OutlineWidth = 5f;
+    IEnumerator ChangeOutline(){
+        render.material.SetColor("_Color", new Color(1f, 1f, 1f, 1f));
+        while (thick < 3)
+        {
+            thick += 0.02f;
+            Debug.Log("THI:" + thick);
+            foreach (Material m in mats)
+            {
+               m.SetColor("_Color", new Color(1f, 1f, 1f, 1f));
+                m.SetFloat("_Thickness", thick);
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+        yield return new WaitForSeconds(1.5f);
+        while (thick > 0.02)
+        {
+            thick -= 0.02f;
+            foreach (Material m in mats){
+                m.SetFloat("_Thickness", thick);
+            }
+            
+            yield return new WaitForSeconds(0.1f);
+        }
+        foreach (Material m in mats)
+        {
+            m.SetColor("_Color", new Color(0f, 0f, 0f, 0f));
+        }
+
+        render.material.SetColor("_Color", new Color(0f, 0f, 0f, 0f));
+
+    }
+
+    private void Increase(){
+        
+        render.material.SetColor("_Color", new Color(1f, 1f, 1f, 1f));
+        while(thick <3){
+            thick += 0.05f;
+            Debug.Log("THI:"+thick);
+            render.material.SetFloat("_Thickness", thick);
+        }
+        return;
+    }
+
+    private void Decrease(){
+        
+        while (thick > 0.05)
+        {
+            thick -= 0.02f;
+            render.material.SetFloat("_Thickness", thick);
+        }
+        render.material.SetColor("_Color", new Color(0f, 0f, 0f, 0f));
+        return;
     }
 }
