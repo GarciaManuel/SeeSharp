@@ -30,7 +30,6 @@ public class SetOutliner : MonoBehaviour
         while (thick < 3)
         {
             thick += 0.02f;
-            Debug.Log("THI:" + thick);
             foreach (Material m in mats)
             {
                m.SetColor("_Color", new Color(1f, 1f, 1f, 1f));
@@ -62,7 +61,6 @@ public class SetOutliner : MonoBehaviour
         render.material.SetColor("_Color", new Color(1f, 1f, 1f, 1f));
         while(thick <3){
             thick += 0.05f;
-            Debug.Log("THI:"+thick);
             render.material.SetFloat("_Thickness", thick);
         }
         return;
