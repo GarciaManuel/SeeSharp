@@ -29,23 +29,23 @@ public class SetOutliner : MonoBehaviour
         render.material.SetColor("_Color", new Color(1f, 1f, 1f, 1f));
         while (thick < 3)
         {
-            thick += 0.02f;
+            thick += 0.06f;
             foreach (Material m in mats)
             {
                m.SetColor("_Color", new Color(1f, 1f, 1f, 1f));
                 m.SetFloat("_Thickness", thick);
             }
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
         yield return new WaitForSeconds(1.5f);
         while (thick > 0.02)
         {
-            thick -= 0.02f;
+            thick -= 0.06f;
             foreach (Material m in mats){
                 m.SetFloat("_Thickness", thick);
             }
             
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
         foreach (Material m in mats)
         {
