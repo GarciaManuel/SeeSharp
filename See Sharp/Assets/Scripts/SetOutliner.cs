@@ -26,13 +26,23 @@ public class SetOutliner : MonoBehaviour
     }
 
     IEnumerator ChangeOutline(){
+        
         render.material.SetColor("_Color", new Color(1f, 1f, 1f, 1f));
         while (thick < 3)
         {
             thick += 0.02f;
             foreach (Material m in mats)
             {
-               m.SetColor("_Color", new Color(1f, 1f, 1f, 1f));
+                if(gameObject.CompareTag("Neutro")){
+                     m.SetColor("_Color", new Color(1f, 1f, 1f, 1f));
+                }
+                if(gameObject.CompareTag("Bad")){
+                     m.SetColor("_Color", new Color(0.902f, 0.29f, 0.23437f, 1f));
+                }
+                if(gameObject.CompareTag("Good")){
+                     m.SetColor("_Color", new Color(0.304f, 0.08f, 0.765f, 1f));
+                }
+               
                 m.SetFloat("_Thickness", thick);
             }
             yield return new WaitForSeconds(0.1f);
