@@ -33,6 +33,7 @@ public class SetOutliner : MonoBehaviour
             thick += 0.06f;
             foreach (Material m in mats)
             {
+
                 if(gameObject.CompareTag("Neutro")){
                      m.SetColor("_Color", new Color(1f, 1f, 1f, 1f));
                 }
@@ -40,7 +41,7 @@ public class SetOutliner : MonoBehaviour
                      m.SetColor("_Color", new Color(0.902f, 0.29f, 0.23437f, 1f));
                 }
                 if(gameObject.CompareTag("Good")){
-                     m.SetColor("_Color", new Color(0.304f, 0.08f, 0.765f, 1f));
+                     m.SetColor("_Color", new Color(0f, 1f, 0.25f, 1f));
                 }
                
                 m.SetFloat("_Thickness", thick);
