@@ -43,6 +43,9 @@ public class SetOutliner : MonoBehaviour
                 if(gameObject.CompareTag("Good")){
                      m.SetColor("_Color", new Color(0f, 1f, 0.25f, 1f));
                 }
+                if(gameObject.CompareTag("Important")){
+                    m.SetColor("_Color", new Color(1f, 1f, 0f, 1f));
+                }
                
                 m.SetFloat("_Thickness", thick);
             }
