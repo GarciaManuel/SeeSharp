@@ -10,12 +10,8 @@ public class PlayerData : Singleton<PlayerData>
 
     public float memoryTime;
     public float ecoRange;
-    public int timeLeft;
+    public float timeLeft;
     public string[] toFind;
-
-    private void Update()
-    {
-    }
 
     public void NewLevel(float levelMemoryTime, float levelEcoRange, int levelTimeLeft, string[] levelToFind, int sceneIndex )
     {
@@ -27,19 +23,24 @@ public class PlayerData : Singleton<PlayerData>
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
     }
 
+    private void Update()
+    {
+        this.timeLeft -= Time.deltaTime;
+    }
+
     public void Hurt(int decreaseTime)
     {
-        this.timeLeft -= decreaseTime;
-        Debug.Log("Time Left" + this.timeLeft);
+        // this.timeLeft -= decreaseTime;
+        Debug.Log("Hurt, lose time");
     }
 
     public bool PickElement(string el)
     {
-        Debug.Log("Element Picked" + el);
         int index = Array.IndexOf(this.toFind, el);
         if(index >= 0)
         {
-            this.toFind.Where((val, idx) => idx != index).ToArray();
+            this.toFind = this.toFind.Where((val, idx) => idx != index).ToArray();
+
             return true;
         }
 

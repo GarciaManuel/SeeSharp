@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 using UnityEngine.SceneManagement;
 
 public class PlayerInput : MonoBehaviour, IInput
@@ -12,7 +11,6 @@ public class PlayerInput : MonoBehaviour, IInput
 
     private void Start()
     {
-        //To move in the direction of the cinemachine
         Cursor.lockState = CursorLockMode.Locked;
     }
     private void Update()
@@ -37,9 +35,6 @@ public class PlayerInput : MonoBehaviour, IInput
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log(hit.gameObject.name + hit.gameObject.tag);
-
-
         switch (hit.gameObject.tag)
         {
             case "Good":
@@ -59,19 +54,10 @@ public class PlayerInput : MonoBehaviour, IInput
                 break;
 
             case "Interact":
-                Debug.Log("Colisión con INTERACT");
                 if (PlayerData.Instance.toFind != null && PlayerData.Instance.toFind.Length >= 0)
                 {
-                    Debug.Log("Entró a Interact");
-
-                    int index = Array.IndexOf(PlayerData.Instance.toFind, hit.gameObject.name);
-                    if (index >= 0)
-                    {
-                        Debug.Log("Entro a desactivar");
-
-                        PlayerData.Instance.toFind.Where((val, idx) => idx != index).ToArray();
+                    if(PlayerData.Instance.PickElement(hit.gameObject.name)) {
                         hit.gameObject.SetActive(false);
-
                     }
                 }
                 break;
