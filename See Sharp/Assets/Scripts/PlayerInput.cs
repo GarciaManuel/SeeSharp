@@ -43,10 +43,10 @@ public class PlayerInput : MonoBehaviour, IInput
         switch (hit.gameObject.tag)
         {
             case "Good":
-                Debug.Log("Entro a geaaeaeaeood");
+                Debug.Log("Colisión con GOOD");
                 if (PlayerData.Instance.toFind == null || PlayerData.Instance.toFind.Length == 0)
                 {
-                    Debug.Log("Entro a good");
+                    Debug.Log("Entró a good");
 
                     PlayerPrefs.SetInt("Scene", 0);
                     SceneManager.LoadScene(1, LoadSceneMode.Single);
@@ -54,15 +54,15 @@ public class PlayerInput : MonoBehaviour, IInput
                 break;
 
             case "Bad":
-                Debug.Log("Entro a adddddd");
+                Debug.Log("Colisión con BAD");
                 PlayerData.Instance.Hurt(10);
                 break;
 
             case "Interact":
-                Debug.Log("Entro a eeaeae");
+                Debug.Log("Colisión con INTERACT");
                 if (PlayerData.Instance.toFind != null && PlayerData.Instance.toFind.Length >= 0)
                 {
-                    Debug.Log("Entro Interact");
+                    Debug.Log("Entró a Interact");
 
                     int index = Array.IndexOf(PlayerData.Instance.toFind, hit.gameObject.name);
                     if (index >= 0)
