@@ -12,11 +12,9 @@ public class SetOutliner : MonoBehaviour
     private Material[] mats;
     // Update is called once per frame
     
-        private void OnTriggerEnter(Collider other) {
-            StartCoroutine(ChangeOutline());
-        }
-       
-            
+    private void OnTriggerEnter(Collider other) {
+        StartCoroutine(ChangeOutline());
+    }         
     
     private void Start() {
         render = gameObject.GetComponent<Renderer>();

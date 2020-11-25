@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 using UnityEngine.SceneManagement;
 
 public class PlayerInput : MonoBehaviour, IInput
@@ -12,7 +11,6 @@ public class PlayerInput : MonoBehaviour, IInput
 
     private void Start()
     {
-        //To move in the direction of the cinemachine
         Cursor.lockState = CursorLockMode.Locked;
     }
     private void Update()
@@ -37,16 +35,13 @@ public class PlayerInput : MonoBehaviour, IInput
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log(hit.gameObject.name + hit.gameObject.tag);
-
-
         switch (hit.gameObject.tag)
         {
             case "Good":
-                Debug.Log("Entro a geaaeaeaeood");
+                Debug.Log("Colisión con GOOD");
                 if (PlayerData.Instance.toFind == null || PlayerData.Instance.toFind.Length == 0)
                 {
-                    Debug.Log("Entro a good");
+                    Debug.Log("Entró a good");
 
                     PlayerPrefs.SetInt("Scene", 0);
                     SceneManager.LoadScene(1, LoadSceneMode.Single);
@@ -54,24 +49,15 @@ public class PlayerInput : MonoBehaviour, IInput
                 break;
 
             case "Bad":
-                Debug.Log("Entro a adddddd");
+                Debug.Log("Colisión con BAD");
                 PlayerData.Instance.Hurt(10);
                 break;
 
             case "Interact":
-                Debug.Log("Entro a eeaeae");
                 if (PlayerData.Instance.toFind != null && PlayerData.Instance.toFind.Length >= 0)
                 {
-                    Debug.Log("Entro Interact");
-
-                    int index = Array.IndexOf(PlayerData.Instance.toFind, hit.gameObject.name);
-                    if (index >= 0)
-                    {
-                        Debug.Log("Entro a desactivar");
-
-                        PlayerData.Instance.toFind.Where((val, idx) => idx != index).ToArray();
+                    if(PlayerData.Instance.PickElement(hit.gameObject.name)) {
                         hit.gameObject.SetActive(false);
-
                     }
                 }
                 break;
