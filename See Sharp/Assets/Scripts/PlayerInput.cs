@@ -2,50 +2,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerInput : MonoBehaviour, IInput
 {
     public Action<Vector2> OnMovementInput { get; set; }
     public Action<Vector3> OnMovementDirectionInput { get; set; }
-    CharacterController controller;
-    bool hurt = false;
+
     private void Start()
     {
+        //To move in the direction of the cinemachine
         Cursor.lockState = CursorLockMode.Locked;
     }
     private void Update()
     {
-        Debug.Log(hurt);
-
-        if (!this.hurt)
-        {
-            GetMovementInput();
-            GetMovementDirection();
-        }
-        else
-        {
-            StartCoroutine(StayStill());
-             
-        }
-
+        GetMovementInput();
+        GetMovementDirection();
     }
-    private IEnumerator StayStill()
-    {
-        Debug.Log("Entro a strill");
-        yield return new WaitForSeconds(2.0f);
-        Debug.Log("cambio hurt");
 
-        this.hurt = false;
-    }
-    public void Strange()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            controller = GetComponent<CharacterController>();
-            controller.Move(-transform.forward * 0.1f);
-        }
-    }
     private void GetMovementDirection()
     {
         var cameraForewardDirection = Camera.main.transform.forward;
@@ -60,38 +33,4 @@ public class PlayerInput : MonoBehaviour, IInput
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         OnMovementInput?.Invoke(input);
     }
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        switch (hit.gameObject.tag)
-        {
-            case "Good":
-                Debug.Log("Colisión con GOOD");
-                if (PlayerData.Instance.toFind == null || PlayerData.Instance.toFind.Length == 0)
-                {
-                    Debug.Log("Entró a good");
-
-                    PlayerPrefs.SetInt("Scene", 1);
-                    SceneManager.LoadScene(1, LoadSceneMode.Single);
-                }
-                break;
-
-            case "Bad":
-                Debug.Log("Colisión con BAD");
-                PlayerData.Instance.Hurt(10);
-                this.hurt = true;
-                controller = GetComponent<CharacterController>();
-                controller.Move(-transform.forward * 3.0f);
-                break;
-
-            case "Interact":
-                if (PlayerData.Instance.toFind != null && PlayerData.Instance.toFind.Length >= 0)
-                {
-                    if(PlayerData.Instance.PickElement(hit.gameObject.name)) {
-                        hit.gameObject.SetActive(false);
-                    }
-                }
-                break;
-        }
-    }
-
 }
