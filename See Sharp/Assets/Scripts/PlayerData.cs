@@ -28,7 +28,8 @@ public class PlayerData : Singleton<PlayerData>
         this.timeLeft -= Time.deltaTime;
         if(this.timeLeft <= 0)
         {
-            SceneManager.LoadScene(4, LoadSceneMode.Single);
+            if(SceneManager.GetActiveScene().buildIndex != 4)
+                SceneManager.LoadScene(4, LoadSceneMode.Single);
         }
     }
 
