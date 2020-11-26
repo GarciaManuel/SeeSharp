@@ -7,7 +7,6 @@ TagManager:
   - Neutro
   - Bad
   - Good
-  - Interact
   layers:
   - Default
   - TransparentFX
