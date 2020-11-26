@@ -102,34 +102,6 @@ namespace SpeedTutorMainMenuSystem
         #region Menu Mouse Clicks
         public void MouseClick(string buttonType)
         {
-            if (buttonType == "Controls")
-            {
-                gameplayMenu.SetActive(false);
-                controlsMenu.SetActive(true);
-                menuNumber = 6;
-            }
-
-            if (buttonType == "Graphics")
-            {
-                GeneralSettingsCanvas.SetActive(false);
-                graphicsMenu.SetActive(true);
-                menuNumber = 3;
-            }
-
-            if (buttonType == "Sound")
-            {
-                GeneralSettingsCanvas.SetActive(false);
-                soundMenu.SetActive(true);
-                menuNumber = 4;
-            }
-
-            if (buttonType == "Gameplay")
-            {
-                GeneralSettingsCanvas.SetActive(false);
-                gameplayMenu.SetActive(true);
-                menuNumber = 5;
-            }
-
             if (buttonType == "Exit")
             {
                 Debug.Log("YES QUIT!");
@@ -211,38 +183,6 @@ namespace SpeedTutorMainMenuSystem
             StartCoroutine(ConfirmationBox());
         }
 
-        #region ResetButton
-        public void ResetButton(string GraphicsMenu)
-        {
-            if (GraphicsMenu == "Brightness")
-            {
-                brightnessEffect.brightness = defaultBrightness;
-                brightnessSlider.value = defaultBrightness;
-                brightnessText.text = defaultBrightness.ToString("0.0");
-                BrightnessApply();
-            }
-
-            if (GraphicsMenu == "Audio")
-            {
-                AudioListener.volume = defaultVolume;
-                volumeSlider.value = defaultVolume;
-                volumeText.text = defaultVolume.ToString("0.0");
-                VolumeApply();
-            }
-
-            if (GraphicsMenu == "Graphics")
-            {
-                controllerSenText.text = defaultSen.ToString("0");
-                controllerSenSlider.value = defaultSen;
-                controlSenFloat = defaultSen;
-
-                invertYToggle.isOn = false;
-
-                GameplayApply();
-            }
-        }
-        #endregion
-
         #region Dialog Options - This is where we load what has been saved in player prefs!
         public void ClickNewGameDialog(string ButtonType)
         {
@@ -290,10 +230,6 @@ namespace SpeedTutorMainMenuSystem
         public void GoBackToOptionsMenu()
         {
             GeneralSettingsCanvas.SetActive(true);
-            graphicsMenu.SetActive(false);
-            soundMenu.SetActive(false);
-            gameplayMenu.SetActive(false);
-
             GameplayApply();
             BrightnessApply();
             VolumeApply();
@@ -308,16 +244,11 @@ namespace SpeedTutorMainMenuSystem
             loadGameDialog.SetActive(false);
             noSaveDialog.SetActive(false);
             GeneralSettingsCanvas.SetActive(false);
-            graphicsMenu.SetActive(false);
-            soundMenu.SetActive(false);
-            gameplayMenu.SetActive(false);
             menuNumber = 1;
         }
 
         public void GoBackToGameplayMenu()
         {
-            controlsMenu.SetActive(false);
-            gameplayMenu.SetActive(true);
             menuNumber = 5;
         }
 
