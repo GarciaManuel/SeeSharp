@@ -8,17 +8,44 @@ public class PlayerInput : MonoBehaviour, IInput
 {
     public Action<Vector2> OnMovementInput { get; set; }
     public Action<Vector3> OnMovementDirectionInput { get; set; }
-
+    CharacterController controller;
+    bool hurt = false;
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
     private void Update()
     {
-        GetMovementInput();
-        GetMovementDirection();
-    }
+        Debug.Log(hurt);
 
+        if (!this.hurt)
+        {
+            GetMovementInput();
+            GetMovementDirection();
+        }
+        else
+        {
+            StartCoroutine(StayStill());
+             
+        }
+
+    }
+    private IEnumerator StayStill()
+    {
+        Debug.Log("Entro a strill");
+        yield return new WaitForSeconds(2.0f);
+        Debug.Log("cambio hurt");
+
+        this.hurt = false;
+    }
+    public void Strange()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            controller = GetComponent<CharacterController>();
+            controller.Move(-transform.forward * 0.1f);
+        }
+    }
     private void GetMovementDirection()
     {
         var cameraForewardDirection = Camera.main.transform.forward;
@@ -43,7 +70,7 @@ public class PlayerInput : MonoBehaviour, IInput
                 {
                     Debug.Log("Entró a good");
 
-                    PlayerPrefs.SetInt("Scene", 0);
+                    PlayerPrefs.SetInt("Scene", 1);
                     SceneManager.LoadScene(1, LoadSceneMode.Single);
                 }
                 break;
@@ -51,6 +78,9 @@ public class PlayerInput : MonoBehaviour, IInput
             case "Bad":
                 Debug.Log("Colisión con BAD");
                 PlayerData.Instance.Hurt(10);
+                this.hurt = true;
+                controller = GetComponent<CharacterController>();
+                controller.Move(-transform.forward * 3.0f);
                 break;
 
             case "Interact":
@@ -64,46 +94,4 @@ public class PlayerInput : MonoBehaviour, IInput
         }
     }
 
-
-   /* private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(collision.gameObject.tag + collision.gameObject.name);
-
-        switch (collision.gameObject.tag)
-        {
-            case "Good":
-                Debug.Log("Entro a geaaeaeaeood");
-                if (PlayerData.Instance.toFind == null || PlayerData.Instance.toFind.Length == 0)
-                {
-                    Debug.Log("Entro a good");
-
-                    PlayerPrefs.SetInt("Scene", 0);
-                    SceneManager.LoadScene(1, LoadSceneMode.Single);
-                }
-                break;
-
-            case "Bad":
-                Debug.Log("Entro a adddddd");
-                PlayerData.Instance.Hurt(10);
-                break;
-
-            case "Interact":
-                Debug.Log("Entro a eeaeae");
-                if (PlayerData.Instance.toFind != null && PlayerData.Instance.toFind.Length >= 0)
-                {
-                    Debug.Log("Entro Interact");
-
-                    int index = Array.IndexOf(PlayerData.Instance.toFind, collision.gameObject.name);
-                    if(index >= 0)
-                    {
-                        Debug.Log("Entro a desactivar");
-
-                        PlayerData.Instance.toFind.Where((val, idx) => idx != index).ToArray();
-                        collision.gameObject.SetActive(false);
-
-                    }
-                }
-                break;
-        }
-    }*/
 }

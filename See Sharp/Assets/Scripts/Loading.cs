@@ -18,7 +18,7 @@ public class Loading : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (previousScene == 0)
         {
-            string[] objects = { "Bed_COL", "DiningTable_COL" };
+            string[] objects = { "Cama", "Mesa de noche" };
             PlayerData.Instance.NewLevel(10 , 10, 100, objects, 2);
         }
         else

@@ -37,8 +37,8 @@ public class HUD : MonoBehaviour
 
         foreach (string el in PlayerData.Instance.toFind)
         {
-            int index = el.IndexOf("_");
-            var parsedEl = el.Substring(0, index);
+            
+            var parsedEl = el;
             inventoryText += parsedEl + "\n";
         }
         if(inventoryText == "")

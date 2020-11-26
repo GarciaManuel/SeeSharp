@@ -393,7 +393,7 @@ PrefabInstance:
     - target: {fileID: 2305534199152938809, guid: 7eac6e0caa84742168f2964371caaff0,
         type: 3}
       propertyPath: rotationSpeed
-      value: 14
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2305534199152938809, guid: 7eac6e0caa84742168f2964371caaff0,
         type: 3}
@@ -478,7 +478,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 7215b57939ceb4461b4bf22e3245f486, type: 3}
       propertyPath: m_Name
-      value: Bed_COL
+      value: Cama
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 7215b57939ceb4461b4bf22e3245f486, type: 3}
       propertyPath: m_TagString
@@ -1092,7 +1092,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!1 &442449588 stripped
 GameObject:
@@ -1472,7 +1472,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: e760d65fe79664bb3b74548e3f010844, type: 3}
       propertyPath: m_Name
-      value: SofaSmall_COL
+      value: "Sof\xE1"
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: e760d65fe79664bb3b74548e3f010844, type: 3}
       propertyPath: m_TagString
@@ -1801,17 +1801,17 @@ PrefabInstance:
     - target: {fileID: 2112103952748375237, guid: 6c27815f092764b8789016b09118dd42,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12051233
+      value: 0.12051232
       objectReference: {fileID: 0}
     - target: {fileID: 2112103952748375237, guid: 6c27815f092764b8789016b09118dd42,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.16358063
+      value: 0.16358067
       objectReference: {fileID: 0}
     - target: {fileID: 2112103952748375237, guid: 6c27815f092764b8789016b09118dd42,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.020137694
+      value: -0.0201377
       objectReference: {fileID: 0}
     - target: {fileID: 2112103952748375237, guid: 6c27815f092764b8789016b09118dd42,
         type: 3}
@@ -1831,12 +1831,12 @@ PrefabInstance:
     - target: {fileID: 2112103952883588991, guid: 6c27815f092764b8789016b09118dd42,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.16383034
+      value: 0.1638303
       objectReference: {fileID: 0}
     - target: {fileID: 2112103952883588991, guid: 6c27815f092764b8789016b09118dd42,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.017994136
+      value: -0.017994128
       objectReference: {fileID: 0}
     - target: {fileID: 2112103952883588991, guid: 6c27815f092764b8789016b09118dd42,
         type: 3}
@@ -1856,12 +1856,12 @@ PrefabInstance:
     - target: {fileID: 2112103952956565453, guid: 6c27815f092764b8789016b09118dd42,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.026452512
+      value: -0.026452508
       objectReference: {fileID: 0}
     - target: {fileID: 2112103952956565453, guid: 6c27815f092764b8789016b09118dd42,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.16267893
+      value: 0.1626789
       objectReference: {fileID: 0}
     - target: {fileID: 2112103952956565453, guid: 6c27815f092764b8789016b09118dd42,
         type: 3}
@@ -2314,7 +2314,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!114 &1233538102
 MonoBehaviour:
@@ -2484,7 +2484,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!1 &1433998973 stripped
 GameObject:
@@ -2512,7 +2512,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!114 &1433998978
 MonoBehaviour:
@@ -2818,12 +2818,12 @@ PrefabInstance:
     - target: {fileID: 864521366535432024, guid: f3936fae0cac39a4a9308bdef97768f7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.16267894
+      value: 0.16267891
       objectReference: {fileID: 0}
     - target: {fileID: 864521366535432024, guid: f3936fae0cac39a4a9308bdef97768f7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.026452517
+      value: -0.026452512
       objectReference: {fileID: 0}
     - target: {fileID: 864521366535432024, guid: f3936fae0cac39a4a9308bdef97768f7,
         type: 3}
@@ -3147,7 +3147,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!114 &1816690093
 MonoBehaviour:
@@ -3402,7 +3402,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: d0c5e2ba5fba04868b0cd879c3c5dc9a, type: 3}
       propertyPath: m_Name
-      value: DiningTable_COL
+      value: Mesa de noche
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d0c5e2ba5fba04868b0cd879c3c5dc9a, type: 3}
       propertyPath: m_TagString
