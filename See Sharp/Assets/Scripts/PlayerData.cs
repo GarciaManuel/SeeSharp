@@ -12,6 +12,7 @@ public class PlayerData : Singleton<PlayerData>
     public float ecoRange = 10;
     public float timeLeft = 100;
     public string[] toFind;
+    public bool isHurt = false;
 
     public void NewLevel(float levelMemoryTime, float levelEcoRange, int levelTimeLeft, int sceneIndex )
     {
@@ -27,10 +28,11 @@ public class PlayerData : Singleton<PlayerData>
         this.timeLeft -= Time.deltaTime;
     }
 
-    public void Hurt(int decreaseTime)
+    public void Hurt()
     {
-        this.timeLeft -= decreaseTime;
-        Debug.Log("Hurt, lose time");
+        this.timeLeft -= 10;
+        isHurt = true;
+        StartCoroutine(Healing());
     }
 
     public bool PickElement(string el)
@@ -44,5 +46,11 @@ public class PlayerData : Singleton<PlayerData>
         }
 
         return false;
+    }
+
+    IEnumerator Healing()
+    {
+        yield return new WaitForSeconds(2.0f);
+        isHurt = false;
     }
 }

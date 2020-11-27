@@ -26,7 +26,9 @@ public class Loading : MonoBehaviour
         } else if (previousScene == 2)
         {
             Debug.Log("Pantalla de victoria");
+            SceneManager.LoadScene(5, LoadSceneMode.Single);
         }
+
     }
 
 }

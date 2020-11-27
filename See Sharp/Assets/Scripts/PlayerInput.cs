@@ -19,7 +19,6 @@ public class PlayerInput : MonoBehaviour, IInput
 
     private void Update()
     {
-        Debug.Log(hurt);
         GetMovementInput();
         GetMovementDirection();
         if(PlayerData.Instance.timeLeft <= 0)
@@ -31,9 +30,7 @@ public class PlayerInput : MonoBehaviour, IInput
 
     private IEnumerator StayStill()
     {
-        Debug.Log("Entro a strill");
         yield return new WaitForSeconds(2.0f);
-        Debug.Log("cambio hurt");
 
         this.hurt = false;
     }
@@ -41,9 +38,7 @@ public class PlayerInput : MonoBehaviour, IInput
     private void GetMovementDirection()
     {
         var cameraForewardDirection = Camera.main.transform.forward;
-        Debug.DrawRay(Camera.main.transform.position, cameraForewardDirection * 10, Color.red);
         var directionToMoveIn = Vector3.Scale(cameraForewardDirection, (Vector3.right + Vector3.forward));
-        Debug.DrawRay(Camera.main.transform.position, directionToMoveIn * 10, Color.blue);
         OnMovementDirectionInput?.Invoke(directionToMoveIn);
     }
     private void PlaySounds(bool moving)
@@ -89,10 +84,8 @@ public class PlayerInput : MonoBehaviour, IInput
         switch (hit.gameObject.tag)
         {
             case "Good":
-                Debug.Log("Colisión con GOOD");
                 if (PlayerData.Instance.toFind == null || PlayerData.Instance.toFind.Length == 0)
                 {
-                    Debug.Log("Entró a good");
                     var previousScene = PlayerPrefs.GetInt("Scene");
                     PlayerPrefs.SetInt("Scene", previousScene + 1);
                     SceneManager.LoadScene(1, LoadSceneMode.Single);
@@ -100,13 +93,11 @@ public class PlayerInput : MonoBehaviour, IInput
                 break;
 
             case "Bad":
-                Debug.Log("Colisión con BAD");
-                PlayerData.Instance.Hurt(10);
+                PlayerData.Instance.Hurt();
                 this.hurt = true;
                 controller = GetComponent<CharacterController>();
                 controller.Move(-transform.forward * 3.0f);
                 StartCoroutine(StayStill());
-
                 break;
 
             case "Interact":
