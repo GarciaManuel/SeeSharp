@@ -17,6 +17,12 @@ public class HUD : MonoBehaviour
     [SerializeField]
     private Text timeLeft;
 
+    [SerializeField]
+    private Text lostTime;
+
+    [SerializeField]
+    private Text hurt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,17 +41,24 @@ public class HUD : MonoBehaviour
         {
             objects[i] = objTagged[i].name;
         }
-        Debug.Log(objects.Length);
         return objects;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("update");
-
         PaintInventory();
         timeLeft.text = $"Tiempo restante: { (int)PlayerData.Instance.timeLeft } s";
+        if (PlayerData.Instance.isHurt)
+        {
+            Debug.Log("Is Hurt!");
+            lostTime.text = $"- 10s";
+            hurt.text = "¡Cuidado!";
+        } else
+        {
+            lostTime.text = "";
+            hurt.text = "";
+        }
     }
 
     void PaintInventory()
@@ -65,8 +78,6 @@ public class HUD : MonoBehaviour
                 inventoryText += parsedEl + "\n";
             }
         }
-        
-        
         inventory.text = inventoryText;
     }
 }
