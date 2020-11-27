@@ -67,7 +67,7 @@ public class HUD : MonoBehaviour
 
         if (PlayerData.Instance.toFind.Length == 0)
         {
-            inventoryText += "La salida";
+            inventoryText += "Objeto verde";
         }
         else
         {
