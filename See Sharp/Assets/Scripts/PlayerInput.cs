@@ -10,6 +10,8 @@ public class PlayerInput : MonoBehaviour, IInput
     public Action<Vector3> OnMovementDirectionInput { get; set; }
     CharacterController controller;
     bool hurt = false;
+    public AudioSource stepSound;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -44,7 +46,20 @@ public class PlayerInput : MonoBehaviour, IInput
         Debug.DrawRay(Camera.main.transform.position, directionToMoveIn * 10, Color.blue);
         OnMovementDirectionInput?.Invoke(directionToMoveIn);
     }
+    private void PlaySounds(bool moving)
+    {
+        if (moving)
+        {
+            stepSound.enabled = true;
+            stepSound.loop = true;
+        }
 
+        if (!moving)
+        {
+            stepSound.enabled = false;
+            stepSound.loop = false;
+        }
+    }
     private void GetMovementInput()
     {
 
@@ -55,6 +70,17 @@ public class PlayerInput : MonoBehaviour, IInput
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
         }
+
+        if (horizontal != 0 || vertical != 0)
+        {
+            PlaySounds(true);
+
+        }
+        else
+        {
+            PlaySounds(false);
+        }
+
         Vector2 input = new Vector2(horizontal, vertical);
         OnMovementInput?.Invoke(input);
     }

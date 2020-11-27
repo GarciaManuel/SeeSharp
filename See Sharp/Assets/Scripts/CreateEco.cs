@@ -9,6 +9,7 @@ public class CreateEco : MonoBehaviour
 
     public float maxRadius;
     private SphereCollider myCollider;
+    public AudioSource ecoSound;
     void Start()
     {
         scaled = new Vector3(5f,5f,5f);
@@ -21,13 +22,16 @@ public class CreateEco : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            ecoSound.enabled = true;
+            ecoSound.Play();
            StartCoroutine(CreatingEco()); 
         }
     }
 
     IEnumerator CreatingEco(){
-        myCollider.radius += maxRadius;
+        yield return new WaitForSeconds(0.2f);
+        myCollider.radius += PlayerData.Instance.ecoRange;
         yield return new WaitForSeconds(1);
-        myCollider.radius -= maxRadius;
+        myCollider.radius -= PlayerData.Instance.ecoRange;
     }
 }
