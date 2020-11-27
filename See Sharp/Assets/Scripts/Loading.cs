@@ -18,7 +18,7 @@ public class Loading : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (previousScene == 0)
         {
-            PlayerData.Instance.NewLevel(2 , 4, 90, 2);
+            PlayerData.Instance.NewLevel(2 , 4, 900, 2);
         }
         else if (previousScene == 1)
         {
