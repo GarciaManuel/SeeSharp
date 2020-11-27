@@ -9,6 +9,8 @@ public class SetOutliner : MonoBehaviour
     private float thick;
     private bool increase;
 
+    public float waitTime;
+
     private Material[] mats;
     // Update is called once per frame
     
@@ -51,7 +53,7 @@ public class SetOutliner : MonoBehaviour
             }
             yield return new WaitForSeconds(0.05f);
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(waitTime);
         while (thick > 0.02)
         {
             thick -= 0.06f;
