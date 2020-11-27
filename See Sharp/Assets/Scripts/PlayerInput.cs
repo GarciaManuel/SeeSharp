@@ -18,16 +18,9 @@ public class PlayerInput : MonoBehaviour, IInput
     {
         Debug.Log(hurt);
 
-        if (!this.hurt)
-        {
             GetMovementInput();
             GetMovementDirection();
-        }
-        else
-        {
-            StartCoroutine(StayStill());
-             
-        }
+
 
     }
     private IEnumerator StayStill()
@@ -49,7 +42,16 @@ public class PlayerInput : MonoBehaviour, IInput
 
     private void GetMovementInput()
     {
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+        float horizontal = 0;
+        float vertical = 0;
+        if (this.hurt == false)
+        {
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
+
+        }
+        Vector2 input = new Vector2(horizontal, vertical);
         OnMovementInput?.Invoke(input);
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -73,6 +75,8 @@ public class PlayerInput : MonoBehaviour, IInput
                 this.hurt = true;
                 controller = GetComponent<CharacterController>();
                 controller.Move(-transform.forward * 3.0f);
+                StartCoroutine(StayStill());
+
                 break;
 
             case "Interact":

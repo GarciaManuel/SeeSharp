@@ -19,7 +19,7 @@ public class Loading : MonoBehaviour
         if (previousScene == 0)
         {
             string[] objects = { "Cama", "Mesa de noche" };
-            PlayerData.Instance.NewLevel(10 , 10, 100, objects, 2);
+            PlayerData.Instance.NewLevel(10 , 10, 2, objects, 2);
         }
         else
         {
