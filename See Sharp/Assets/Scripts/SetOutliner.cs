@@ -41,12 +41,16 @@ public class SetOutliner : MonoBehaviour
                 if(gameObject.CompareTag("Good")){
                      m.SetColor("_Color", new Color(0f, 1f, 0.25f, 1f));
                 }
-               
+                if (gameObject.CompareTag("Interact"))
+                {
+                    m.SetColor("_Color", new Color(0.7843f, 0.8313f, 0f, 1f));
+                }
+
                 m.SetFloat("_Thickness", thick);
             }
             yield return new WaitForSeconds(0.05f);
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(PlayerData.Instance.memoryTime);
         while (thick > 0.02)
         {
             thick -= 0.06f;

@@ -30,8 +30,8 @@ public class CreateEco : MonoBehaviour
 
     IEnumerator CreatingEco(){
         yield return new WaitForSeconds(0.2f);
-        myCollider.radius += maxRadius;
+        myCollider.radius += PlayerData.Instance.ecoRange;
         yield return new WaitForSeconds(1);
-        myCollider.radius -= maxRadius;
+        myCollider.radius -= PlayerData.Instance.ecoRange;
     }
 }

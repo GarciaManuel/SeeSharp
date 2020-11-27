@@ -8,17 +8,16 @@ using UnityEngine.SceneManagement;
 public class PlayerData : Singleton<PlayerData>
 {
 
-    public float memoryTime;
-    public float ecoRange;
-    public float timeLeft;
+    public float memoryTime= 10;
+    public float ecoRange = 10;
+    public float timeLeft = 100;
     public string[] toFind;
 
-    public void NewLevel(float levelMemoryTime, float levelEcoRange, int levelTimeLeft, string[] levelToFind, int sceneIndex )
+    public void NewLevel(float levelMemoryTime, float levelEcoRange, int levelTimeLeft, int sceneIndex )
     {
         this.memoryTime = levelMemoryTime;
         this.ecoRange = levelEcoRange;
         this.timeLeft = levelTimeLeft;
-        this.toFind = levelToFind;
 
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
     }
