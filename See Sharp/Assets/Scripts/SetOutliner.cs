@@ -13,7 +13,12 @@ public class SetOutliner : MonoBehaviour
     // Update is called once per frame
     
     private void OnTriggerEnter(Collider other) {
-        StartCoroutine(ChangeOutline());
+
+        if(other.gameObject.CompareTag("Eco"))
+        {
+            StartCoroutine(ChangeOutline());
+        }
+
     }         
     
     private void Start() {
@@ -21,6 +26,11 @@ public class SetOutliner : MonoBehaviour
         mats = render.materials;
         thick = 0.02f;
         render.material.SetFloat("_Thickness", thick);
+
+        foreach (Material m in mats)
+        {
+            m.SetColor("_Color", new Color(0f, 0f, 0f, 0f));
+        }
     }
 
     IEnumerator ChangeOutline(){
