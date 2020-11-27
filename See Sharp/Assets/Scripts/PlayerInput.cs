@@ -38,14 +38,6 @@ public class PlayerInput : MonoBehaviour, IInput
 
         this.hurt = false;
     }
-    public void Strange()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            controller = GetComponent<CharacterController>();
-            controller.Move(-transform.forward * 0.1f);
-        }
-    }
     private void GetMovementDirection()
     {
         var cameraForewardDirection = Camera.main.transform.forward;
