@@ -20,10 +20,12 @@ public class Loading : MonoBehaviour
         {
             PlayerData.Instance.NewLevel(2 , 4, 90, 2);
         }
-        else
+        else if (previousScene == 1)
         {
             PlayerData.Instance.NewLevel(6, 10, 180, 3);
-
+        } else if (previousScene == 2)
+        {
+            Debug.Log("Pantalla de victoria");
         }
     }
 
