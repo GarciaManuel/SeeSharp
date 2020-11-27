@@ -95,6 +95,9 @@ public class AgentMovement : MonoBehaviour
         controller.Move(movementVector * Time.deltaTime);
 
     }
-    
+    private void getHurt()
+    {
+        controller.Move(-movementVector * Time.deltaTime);
+    }
 
 }

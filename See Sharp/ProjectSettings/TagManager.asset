@@ -7,8 +7,9 @@ TagManager:
   - Neutro
   - Bad
   - Good
-  - Important
-  layers:
+  - Interact
+
+layers:
   - Default
   - TransparentFX
   - Ignore Raycast
