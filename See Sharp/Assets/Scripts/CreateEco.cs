@@ -7,6 +7,8 @@ public class CreateEco : MonoBehaviour
     // Start is called before the first frame update
     private Vector3 scaled;
 
+    public AudioSource chasquido;
+
     public float maxRadius;
     private SphereCollider myCollider;
     void Start()
@@ -21,11 +23,14 @@ public class CreateEco : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-           StartCoroutine(CreatingEco()); 
+            chasquido.enabled = true;
+            chasquido.Play();
+            StartCoroutine(CreatingEco()); 
         }
     }
 
     IEnumerator CreatingEco(){
+        yield return new WaitForSeconds(0.2f);
         myCollider.radius += maxRadius;
         yield return new WaitForSeconds(1);
         myCollider.radius -= maxRadius;

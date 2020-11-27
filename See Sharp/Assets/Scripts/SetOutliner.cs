@@ -9,6 +9,8 @@ public class SetOutliner : MonoBehaviour
     private float thick;
     private bool increase;
 
+    public float waitTime;
+
     private Material[] mats;
     // Update is called once per frame
     
@@ -41,12 +43,15 @@ public class SetOutliner : MonoBehaviour
                 if(gameObject.CompareTag("Good")){
                      m.SetColor("_Color", new Color(0f, 1f, 0.25f, 1f));
                 }
+                if(gameObject.CompareTag("Important")){
+                    m.SetColor("_Color", new Color(1f, 1f, 0f, 1f));
+                }
                
                 m.SetFloat("_Thickness", thick);
             }
             yield return new WaitForSeconds(0.05f);
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(waitTime);
         while (thick > 0.02)
         {
             thick -= 0.06f;

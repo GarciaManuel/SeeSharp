@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class AgentMovement : MonoBehaviour
 {
+
     CharacterController controller;
     Animator animator;
     public float rotationSpeed, movementSpeed, gravity = 20;
     Vector3 movementVector = Vector3.zero;
     private float desiredRotationAngle = 0;
+    private Vector3 pastPos;
 
     // Start is called before the first frame update
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        pastPos = gameObject.transform.position;
     }
 
     public void HandleMovement(Vector2 input) {
