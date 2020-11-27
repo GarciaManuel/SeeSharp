@@ -14,15 +14,19 @@ public class PlayerInput : MonoBehaviour, IInput
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
+
     private void Update()
     {
         Debug.Log(hurt);
-
-            GetMovementInput();
-            GetMovementDirection();
-
+        GetMovementInput();
+        GetMovementDirection();
+        if(PlayerData.Instance.timeLeft <= 0)
+        {
+            SceneManager.LoadScene(4, LoadSceneMode.Single);
+        }
 
     }
+
     private IEnumerator StayStill()
     {
         Debug.Log("Entro a strill");
@@ -31,6 +35,7 @@ public class PlayerInput : MonoBehaviour, IInput
 
         this.hurt = false;
     }
+
     private void GetMovementDirection()
     {
         var cameraForewardDirection = Camera.main.transform.forward;
@@ -49,7 +54,6 @@ public class PlayerInput : MonoBehaviour, IInput
         {
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
-
         }
         Vector2 input = new Vector2(horizontal, vertical);
         OnMovementInput?.Invoke(input);
@@ -63,8 +67,8 @@ public class PlayerInput : MonoBehaviour, IInput
                 if (PlayerData.Instance.toFind == null || PlayerData.Instance.toFind.Length == 0)
                 {
                     Debug.Log("Entró a good");
-
-                    PlayerPrefs.SetInt("Scene", 1);
+                    var previousScene = PlayerPrefs.GetInt("Scene");
+                    PlayerPrefs.SetInt("Scene", previousScene + 1);
                     SceneManager.LoadScene(1, LoadSceneMode.Single);
                 }
                 break;
@@ -89,5 +93,4 @@ public class PlayerInput : MonoBehaviour, IInput
                 break;
         }
     }
-
 }
