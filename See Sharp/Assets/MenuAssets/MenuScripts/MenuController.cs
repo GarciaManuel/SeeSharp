@@ -9,6 +9,8 @@ namespace SpeedTutorMainMenuSystem
 {
     public class MenuController : MonoBehaviour
     {
+
+
         #region Default Values
         [Header("Default Menu Values")]
         [SerializeField] private float defaultBrightness;
