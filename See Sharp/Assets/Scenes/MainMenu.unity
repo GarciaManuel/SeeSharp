@@ -548,92 +548,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097409197}
   m_CullTransparentMesh: 0
---- !u!1001 &1100987976
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4084184335491190, guid: cc18238686906234bb678b403db8d8fd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4084184335491190, guid: cc18238686906234bb678b403db8d8fd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4084184335491190, guid: cc18238686906234bb678b403db8d8fd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4084184335491190, guid: cc18238686906234bb678b403db8d8fd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4084184335491190, guid: cc18238686906234bb678b403db8d8fd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4084184335491190, guid: cc18238686906234bb678b403db8d8fd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4084184335491190, guid: cc18238686906234bb678b403db8d8fd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4084184335491190, guid: cc18238686906234bb678b403db8d8fd, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114325646035853880, guid: cc18238686906234bb678b403db8d8fd,
-        type: 3}
-      propertyPath: brightnessEffect
-      value: 
-      objectReference: {fileID: 980339799}
-    - target: {fileID: 114325646035853880, guid: cc18238686906234bb678b403db8d8fd,
-        type: 3}
-      propertyPath: brightnessText
-      value: 
-      objectReference: {fileID: 114954420516018989}
-    - target: {fileID: 114325646035853880, guid: cc18238686906234bb678b403db8d8fd,
-        type: 3}
-      propertyPath: brightnessSlider
-      value: 
-      objectReference: {fileID: 114414691840460487}
-    - target: {fileID: 114325646035853880, guid: cc18238686906234bb678b403db8d8fd,
-        type: 3}
-      propertyPath: volumeText
-      value: 
-      objectReference: {fileID: 114662439059409811}
-    - target: {fileID: 114325646035853880, guid: cc18238686906234bb678b403db8d8fd,
-        type: 3}
-      propertyPath: volumeSlider
-      value: 
-      objectReference: {fileID: 114272392085030979}
-    - target: {fileID: 114325646035853880, guid: cc18238686906234bb678b403db8d8fd,
-        type: 3}
-      propertyPath: controllerText
-      value: 
-      objectReference: {fileID: 114036040518420001}
-    - target: {fileID: 114325646035853880, guid: cc18238686906234bb678b403db8d8fd,
-        type: 3}
-      propertyPath: controllerSlider
-      value: 
-      objectReference: {fileID: 114866046449484247}
-    - target: {fileID: 114325646035853880, guid: cc18238686906234bb678b403db8d8fd,
-        type: 3}
-      propertyPath: invertYToggle
-      value: 
-      objectReference: {fileID: 114897184094852769}
-    - target: {fileID: 114325646035853880, guid: cc18238686906234bb678b403db8d8fd,
-        type: 3}
-      propertyPath: menuController
-      value: 
-      objectReference: {fileID: 114754865355005021}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cc18238686906234bb678b403db8d8fd, type: 3}
 --- !u!1 &1606149120
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +692,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2001735589
 GameObject:

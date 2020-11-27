@@ -14,22 +14,19 @@ public class PlayerInput : MonoBehaviour, IInput
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
+
     private void Update()
     {
         Debug.Log(hurt);
-
-        if (!this.hurt)
+        GetMovementInput();
+        GetMovementDirection();
+        if(PlayerData.Instance.timeLeft <= 0)
         {
-            GetMovementInput();
-            GetMovementDirection();
-        }
-        else
-        {
-            StartCoroutine(StayStill());
-             
+            SceneManager.LoadScene(4, LoadSceneMode.Single);
         }
 
     }
+
     private IEnumerator StayStill()
     {
         Debug.Log("Entro a strill");
@@ -38,14 +35,7 @@ public class PlayerInput : MonoBehaviour, IInput
 
         this.hurt = false;
     }
-    public void Strange()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            controller = GetComponent<CharacterController>();
-            controller.Move(-transform.forward * 0.1f);
-        }
-    }
+
     private void GetMovementDirection()
     {
         var cameraForewardDirection = Camera.main.transform.forward;
@@ -57,7 +47,15 @@ public class PlayerInput : MonoBehaviour, IInput
 
     private void GetMovementInput()
     {
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+        float horizontal = 0;
+        float vertical = 0;
+        if (this.hurt == false)
+        {
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
+        }
+        Vector2 input = new Vector2(horizontal, vertical);
         OnMovementInput?.Invoke(input);
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -69,8 +67,8 @@ public class PlayerInput : MonoBehaviour, IInput
                 if (PlayerData.Instance.toFind == null || PlayerData.Instance.toFind.Length == 0)
                 {
                     Debug.Log("Entró a good");
-
-                    PlayerPrefs.SetInt("Scene", 1);
+                    var previousScene = PlayerPrefs.GetInt("Scene");
+                    PlayerPrefs.SetInt("Scene", previousScene + 1);
                     SceneManager.LoadScene(1, LoadSceneMode.Single);
                 }
                 break;
@@ -81,6 +79,8 @@ public class PlayerInput : MonoBehaviour, IInput
                 this.hurt = true;
                 controller = GetComponent<CharacterController>();
                 controller.Move(-transform.forward * 3.0f);
+                StartCoroutine(StayStill());
+
                 break;
 
             case "Interact":
@@ -93,5 +93,4 @@ public class PlayerInput : MonoBehaviour, IInput
                 break;
         }
     }
-
 }

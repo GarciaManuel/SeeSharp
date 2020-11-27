@@ -21,11 +21,14 @@ public class Loading : MonoBehaviour
             string[] objects = { "Cama", "Mesa de noche","Botella" };
             PlayerData.Instance.NewLevel(10 , 10, 10000, objects, 2);
         }
-        else
+        else if (previousScene == 1)
         {
-            string[] objects = { "Tres"};
-            PlayerData.Instance.NewLevel(100, 100, 10, objects, 3);
+            string[] objects = { "Tres" };
+            PlayerData.Instance.NewLevel(100, 100, 200, objects, 3);
 
+        } else if (previousScene == 2)
+        {
+            Debug.Log("Pantalla de victoria");
         }
     }
 }

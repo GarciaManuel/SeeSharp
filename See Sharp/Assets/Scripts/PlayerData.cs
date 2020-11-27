@@ -26,19 +26,12 @@ public class PlayerData : Singleton<PlayerData>
     private void Update()
     {
         this.timeLeft -= Time.deltaTime;
-        if(this.timeLeft <= 0)
-        {
-            if(SceneManager.GetActiveScene().buildIndex != 4)
-                SceneManager.LoadScene(4, LoadSceneMode.Single);
-        }
     }
 
     public void Hurt(int decreaseTime)
     {
         this.timeLeft -= decreaseTime;
         Debug.Log("Hurt, lose time");
-
-
     }
 
     public bool PickElement(string el)
