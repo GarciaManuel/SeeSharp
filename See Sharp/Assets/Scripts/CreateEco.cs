@@ -29,6 +29,7 @@ public class CreateEco : MonoBehaviour
     }
 
     IEnumerator CreatingEco(){
+        yield return new WaitForSeconds(0.2f);
         myCollider.radius += maxRadius;
         yield return new WaitForSeconds(1);
         myCollider.radius -= maxRadius;
